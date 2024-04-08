@@ -5,7 +5,7 @@ public class rotate90Matrix {
         int ans[][] = new int[c][r];
         for(int i =0 ; i <c; i++){
             for(int j = 0; j < r; j++){
-                ans[i][j] = arr[j] [i];
+                ans[i][j] = arr[j][i];
             }
         }
         return ans;
@@ -60,4 +60,3 @@ public class rotate90Matrix {
       
     }
 }
-45
