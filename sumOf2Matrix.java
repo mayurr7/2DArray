@@ -73,4 +73,3 @@ public class sumOf2Matrix {
         add(arr, r1, c1, arr2, r2, c2);
     }
 }
-52.31

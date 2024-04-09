@@ -56,11 +56,11 @@ public class transposeMatrix {
         System.out.println("orignal matrix ");
         printmatrix(arr);
         System.out.println("Answer matrix ");
-        // int ans[][] = transposeMatrixArray(arr, r, c);
-        // printmatrix(ans);
+        int ans[][] = transposeMatrixArray(arr, r, c);
+        printmatrix(ans);
 
 
         //using inplacce
-        transposeMatrixInplace(arr, r, c);
+        //transposeMatrixInplace(arr, r, c);
     }
 }

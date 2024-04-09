@@ -9,7 +9,7 @@ public class rotate90Matrix {
             }
         }
         return ans;
-        
+         
     }
 
     static void reverseTransposeMatrix(int[][] ans){

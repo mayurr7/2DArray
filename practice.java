@@ -1,32 +1,30 @@
 import java.util.Scanner;
 
 public class practice {
-    // static void swappArrayy(int arr[][] , int i, int j){
-    //    arr[i][j] =arr[j][i];
-    // }
-
-   static void reverseArray(int arr[][]){
-    for(int i =0; i<arr.length; i++){
-        for(int j = arr.length-1; j>=0; j--){
-            System.out.print(arr[i][j] + " ");
+   static int[][] transposeMatrix(int arr[][], int r , int c ){
+    int  ans[][] = new int[c][r];
+    for(int i = 0 ; i < c ; i++){
+        for(int j = 0; j <r; j++){
+            ans[i][j] = arr[j][i];
+            
         }
-        System.out.println();
     }
-    
-
+    return ans;
    }
 
-    // static void reverse(int arr[][]){
-       
-    //     for(int i =0; i<arr.length; i++){
-    //         for(int j = 0 ; j<arr[i].length; j++){
-    //             swappArrayy(arr, i, j);
-    //             j++;
-    //         }
-    //     }
-      
-       
-    // }
+   static void reverseTransposeMatrix(int ans[][]){
+        for(int i = 0; i < ans.length; i ++){
+            int left = 0;
+            int right = ans[i].length-1;
+            while (left < right) {
+                int temp = ans[i][left];
+                ans[i][left] = ans[i][right];
+                ans[i][right] = temp;
+                left++;
+                right--;
+            }
+        }
+   }
 
     static void printAreay(int arr[][]){
         for(int i = 0; i < arr.length; i++){
@@ -39,15 +37,15 @@ public class practice {
     public static void main(String[] args) {
          Scanner sc = new Scanner(System.in);
         System.out.println("Enter row  and columnof arraay :");
-        int r1 = sc.nextInt();
-        int c1 = sc.nextInt();
+        int r = sc.nextInt();
+        int c = sc.nextInt();
 
-        int arr[][] = new int[r1][c1];
+        int arr[][] = new int[r][c];
 
         System.out.println("Enter element of first matrix  : ");
 
-        for(int i = 0; i < arr.length; i++){
-            for(int j = 0; j < arr[i].length; j++){
+        for(int i = 0; i < r; i++){
+            for(int j = 0; j < c; j++){
                 arr[i][j] =sc.nextInt();
             }
         }
@@ -57,19 +55,13 @@ public class practice {
    
     
         System.out.println("answer is :");
-      reverseArray(arr);
+       int ans[][] = transposeMatrix(arr, r, c);
+       
+
+        reverseTransposeMatrix(ans);
+        printAreay(ans);
        
 
     }
 }
-int top =0;
-int bottom = arr.length-1;
- while (top < bottom) {
-    int temp = arr[i][top];
-    arr[i][top] = arr[bottom][i];
-    arr[bottom][i] = temp;
-    top++;
-    bottom--;
- }
 
-}printAreay(arr);
